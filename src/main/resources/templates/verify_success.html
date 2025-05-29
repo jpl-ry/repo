@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Verified</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .login-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      background-color: #ffffff30;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #ffffff55;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-card">
+    <h2>Email Verified</h2>
+	<p>Your email <strong th:text="${email}">user@example.com</strong> has been successfully verified with Nexnoratech Private Limited.</p>
+    <a href="/login" class="login-btn">Proceed to Login</a>
+  </div>
+</body>
+</html>

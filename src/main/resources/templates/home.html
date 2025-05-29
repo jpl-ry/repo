@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexnora Technologies</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('n1.JPG') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+ 
+    /* Navbar */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      background-color: rgb(24, 4, 4);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+ 
+    nav img {
+      height: 50px;
+    }
+ 
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    nav ul li a {
+      text-decoration: none;
+      color: #f5f7fa;
+      font-weight: 500;
+    }
+ 
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 400px;
+    }
+ 
+    .hero img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: none;
+    }
+ 
+    .hero img.active {
+      display: block;
+    }
+ 
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.2); /* semi-transparent background */
+      backdrop-filter: blur(5px); /* subtle blur effect */
+    }
+ 
+    .service {
+      flex: 1 1 300px;
+      margin: 20px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.6); /* card background */
+      border-radius: 10px;
+      text-align: center;
+    }
+ 
+    .service h2 {
+      background-color: rgba(255, 255, 255, 0.3); /* translucent heading background */
+      padding: 10px;
+      border-radius: 5px;
+    }
+ 
+    .contact {
+      background-color: rgba(0, 64, 128, 0.9);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+ 
+    footer {
+      background-color: #00264d;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+ 
+  <!-- Navbar -->
+  <nav>
+    <div>
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Nexnora Logo">
+
+    </div>
+    <ul>
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#Leave Management">Leave Management</a></li>
+      <li><a href="{{ url_for('project_management') }}">project Management</a></li>
+      
+    </ul>
+    <!-- Sign In / Sign Up Buttons -->
+<div style="position: absolute; top: 20px; right: 30px;">
+  <button onclick="window.location.href='login.html'"
+          style="margin-right: 10px; padding: 10px 20px; background-color: #4CAF50; border: none; color: white; border-radius: 5px; cursor: pointer;">
+    Sign In
+  </button>
+  <button onclick="window.location.href='signup.html'"
+          style="padding: 10px 20px; background-color: #008CBA; border: none; color: white; border-radius: 5px; cursor: pointer;">
+    Sign Up
+  </button>
+</div>
+
+  </nav>
+  
+ 
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="{{ url_for('static', filename='n1.JPG') }}" alt="Slide 1" class="active">
+	<img src="{{ url_for('static', filename='n2.JPG') }}" alt="Slide 2">
+	<img src="{{ url_for('static', filename='n3.JPG') }}" alt="Slide 3">
+	<img src="{{ url_for('static', filename='n4.JPG') }}" alt="Slide 4">
+
+  </section>
+ 
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="service">
+      <h2>Software Development</h2>
+      <p>Building scalable and efficient software tailored to your business requirements.</p>
+    </div>
+    <div class="service">
+      <h2>App Development</h2>
+      <p>Creating user-friendly mobile applications to enhance customer engagement.</p>
+    </div>
+    <div class="service">
+      <h2>Cloud Solutions</h2>
+      <p>Offering secure and reliable cloud services for seamless business operations.</p>
+    </div>
+  </section>
+ 
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h1>Contact Us</h1>
+    <p>Email: info@nexnora.com | Phone: +91 12345 67890</p>
+    <p>Address: Kavuri Hills, Phase-1, Hyderabad, Telangana, India</p>
+  </section>
+ 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nexnora Technologies. All rights reserved.</p>
+  </footer>
+ 
+  <script>
+    // Simple image slider
+    const slides = document.querySelectorAll('.hero img');
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 3000);
+  </script>
+ 
+</body>
+</html>
+ 
+ 
